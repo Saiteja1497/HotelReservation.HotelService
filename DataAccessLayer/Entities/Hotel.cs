@@ -9,6 +9,6 @@ namespace DataAccessLayer.Entities
         public string HotelName { get; set; } = string.Empty;
         public string HotelLocation { get; set; } = string.Empty;
         public string HotelDescription { get; set; } = string.Empty;
-        public List<Room>? Rooms { get; set; }
+        public List<Room> Rooms { get; set; } = new List<Room>();
     }
 }

@@ -10,8 +10,8 @@ namespace DataAccessLayer.Context
 
         
         }
-        public DbSet<Hotel> Hotels { get; set; }
-        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Hotel> Hotel { get; set; }
+        public DbSet<Room> Room { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

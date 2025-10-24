@@ -13,6 +13,7 @@ namespace BusinessLogicLayer.Mappers
                 .ForMember(dest => dest.RoomID, opt => opt.MapFrom(src => src.RoomID))
                 .ForMember(dest => dest.RoomPrice, opt => opt.MapFrom(src => src.RoomPrice))
                 .ForMember(dest => dest.RoomType, opt => opt.MapFrom(src => src.RoomType))
+                //.ForMember(dest => dest.RoomType, opt => opt.MapFrom(src => Enum.Parse<RoomTypeOptions>(src.RoomType)))
                 .ForMember(dest => dest.IsAvailable, opt => opt.MapFrom(src => src.IsAvailable));
         }
     }

@@ -2,7 +2,7 @@
 
 namespace BusinessLogicLayer.DTO
 {
-    public record HotelAddRequest(string HotelName, string HotelLocation, string HotelDescription, List<Room>? Rooms)
+    public record HotelAddRequest(string HotelName, string HotelLocation, string HotelDescription, List<RoomAddRequestDTO>? Rooms)
     {
        public HotelAddRequest():this(default, default, default, default)
        {
