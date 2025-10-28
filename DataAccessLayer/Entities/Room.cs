@@ -14,6 +14,6 @@ namespace DataAccessLayer.Entities
         public Guid HotelID { get; set; }
         public string RoomType { get; set; } = string.Empty;
         public decimal RoomPrice { get; set; }
-        public bool IsAvailable { get; set; }
+        public int NoOfRoomsAvailable { get; set; }
     }
 }

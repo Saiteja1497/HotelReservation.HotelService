@@ -93,6 +93,7 @@ namespace DataAccessLayer.Repositories
             return hotel;
         }
 
+       
         public async Task<IEnumerable<Hotel?>> GetHotelsByConditionAsync(Expression<Func<Hotel, bool>> conditioExpretion)
         {
             List<Hotel>? hotels =  await _context.Hotel.Where(conditioExpretion).ToListAsync();
@@ -123,7 +124,7 @@ namespace DataAccessLayer.Repositories
                     room.HotelID = hotel.HotelID;
                     room.RoomPrice = hotel.Rooms.FirstOrDefault(r => r.RoomID == room.RoomID)?.RoomPrice ?? room.RoomPrice;
                     room.RoomType = hotel.Rooms.FirstOrDefault(r => r.RoomID == room.RoomID)?.RoomType ?? room.RoomType;
-                    room.IsAvailable = hotel.Rooms.FirstOrDefault(r => r.RoomID == room.RoomID)?.IsAvailable ?? room.IsAvailable;
+                    room.NoOfRoomsAvailable = hotel.Rooms.FirstOrDefault(r => r.RoomID == room.RoomID)?.NoOfRoomsAvailable ?? room.NoOfRoomsAvailable;
                     _context.Room.Update(room);
                 }
                 await _context.SaveChangesAsync();
@@ -136,5 +137,8 @@ namespace DataAccessLayer.Repositories
                 return null;
             }
         }
+
+
+
     }
 }

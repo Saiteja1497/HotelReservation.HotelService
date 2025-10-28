@@ -22,6 +22,10 @@ namespace HotelService.API.APIEndpoints
             app.MapGet("/api/hotels/search/hotel-id/{hotelID:guid}", async (IHotelService hotelService, Guid hotelID) =>
             {
                 HotelResponse? hotel = await hotelService.GetHotelByCondition(temp=>temp.HotelID == hotelID);
+                if(hotel == null)
+                {
+                    return Results.NotFound("Hotel not found for the given ID");
+                }
                 return Results.Ok(hotel);
             });
 

@@ -12,6 +12,6 @@
         public Guid RoomID { get; init; }
         public RoomTypeOptions RoomType { get; init; }
         public decimal RoomPrice { get; init; }
-        public bool IsAvailable { get; init; }
+        public int NoOfRoomsAvailable { get; init; }
     }
 }

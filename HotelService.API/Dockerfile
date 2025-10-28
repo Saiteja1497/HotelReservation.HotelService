@@ -27,4 +27,9 @@ RUN dotnet publish "./HotelService.API.csproj" -c $BUILD_CONFIGURATION -o /app/p
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV MYSQL_HOST=localhost
+ENV MYSQL_PASSWORD=admin
+ENV MYSQL_DATABASE=hotelreservationhoteldatabase
+ENV MYSQL_USER=root
+ENV MYSQL_PORT=3306
 ENTRYPOINT ["dotnet", "HotelService.API.dll"]
